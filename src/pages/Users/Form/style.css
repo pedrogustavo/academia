@@ -1,0 +1,67 @@
+.user-form-container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.user-form-container h2 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.user-form-container form {
+  width: 100%;
+  max-width: 500px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-form-container form label {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.user-form-container form label input {
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.user-form-container form .actions {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 10px;
+}
+
+.user-form-container form .actions button[type="submit"] {
+  border: none;
+  background: var(--success);
+  color: var(--font-light);
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.user-form-container form .actions button[type="button"] {
+  border: none;
+  background: var(--danger);
+  color: var(--font-light);
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}

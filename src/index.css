@@ -1,3 +1,27 @@
+:root {
+  --primary: #3a3a9e;
+  --success: #3a9e3a;
+  --danger: #9e3a3a;
+
+  --border: #cccccc;
+
+  --bg-card: #dddddd;
+
+  --font-dark: #666666;
+  --font-light: #ffffff;
+
+  --link-color: #777777;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +29,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--font-dark);
+  font-size: 16px;
 }
 
 code {

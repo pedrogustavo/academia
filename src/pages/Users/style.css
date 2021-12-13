@@ -1,0 +1,69 @@
+.users-container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.users-container h2 {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.users-container h2 small a {
+    background-color: var(--primary);
+    color: var(--font-light);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.users-container p {
+    width: 100%;
+}
+
+.users-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.users-container table thead th {
+  border-bottom: 1px solid var(--border);
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.users-container table tbody td {
+    padding: 5px;
+}
+.users-container table tbody tr:nth-child(even) {
+  background: var(--bg-card);
+}
+
+.btn-remove-user {
+    border: none;
+    background: var(--danger);
+    color: var(--font-light);
+    padding: 5px;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.btn-edit-user {
+    border: none;
+    background: var(--primary);
+    color: var(--font-light);
+    padding: 5px;
+    border-radius: 4px;
+    margin: 5px;
+}
