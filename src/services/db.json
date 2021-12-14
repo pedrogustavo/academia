@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Harry Tiago Potter",
+            "birthDate": "31/07/1980",
+            "cpf": "11122233344",
+            "address": "Rua dos Alfeneiros, nº4",
+            "email": "potter@hogwarts.com"
+        },
+        {
+            "id": 2,
+            "name": "Hermione Jean Granger",
+            "birthDate": "19/09/1979",
+            "cpf": "11122233344",
+            "address": "Rua dos Alfeneiros, nº5",
+            "email": "hermione@hogwarts.com"
+        },
+        {
+            "id": 3,
+            "name": "Ronald Abílio Weasley",
+            "birthDate": "01/03/1980",
+            "cpf": "11122233344",
+            "address": "Rua dos Alfeneiros, nº5",
+            "email": "weasley@hogwarts.com"
+        }
+    ]
+}
+  

@@ -8,30 +8,34 @@ import './style.css'
 function UserForm() {
     const params = useParams()
     const navigate = useNavigate()
-    const [user, setUser] = useState({});
-    const [address, setAddress] = useState("");
-    const [cpf, setCpf] = useState("");
-    const [email, setEmail] = useState("");
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [role, setRole] = useState("");
+    const [user, setUser] = useState({})
+    const [address, setAddress] = useState("")
+    const [cpf, setCpf] = useState("")
+    const [email, setEmail] = useState("")
+    const [name, setName] = useState("")
+    const [phone, setPhone] = useState("")
+    const [role, setRole] = useState("")
 
     useEffect(() => {
-        if (params?.id) {
-            loadUser(params?.id);
+        if (params?.id !== 'form') {
+            loadUser(params?.id)
         }
     }, [params]);
 
     const loadUser = async function (id) {
-        const response = await api.get(`/users/${id}`);
-        const user = response.data.user;
-        setUser(user);
-        setAddress(user.address);
-        setCpf(user.cpf);
-        setEmail(user.email);
-        setName(user.name);
-        setPhone(user.phone);
-        setRole(user.role);
+        try {
+            const response = await api.get(`/users/${id}`);
+            const user = response.data
+            setUser(user);
+            setAddress(user.address);
+            setCpf(user.cpf);
+            setEmail(user.email);
+            setName(user.name);
+            setPhone(user?.phone);
+            setRole(user.role);
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     const handleSubmit = async (event) => {

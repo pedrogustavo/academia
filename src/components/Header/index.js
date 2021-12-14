@@ -7,13 +7,13 @@ function Header({ title, active }) {
             <h1>LyFit <small>{title}</small></h1>
             <nav>
                 <ul>
-                    <li className={active === 'users' && 'active'}>
+                    <li className={active === 'users' ? 'active' : ''}>
                         <NavLink to="/users">Usuários</NavLink>
                     </li>
-                    <li className={active === 'users' && 'active'}>
+                    <li className={active === 'users' ? 'active' : ''}>
                         <NavLink to="/students">Alunos</NavLink>
                     </li>
-                    <li className={active === 'users' && 'active'}>
+                    <li className={active === 'users' ? 'active' : ''}>
                         <NavLink to="/payments">Mensalidades</NavLink>
                     </li>
                 </ul>

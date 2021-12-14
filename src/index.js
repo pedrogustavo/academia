@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { upServer } from './server';
 
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -14,8 +13,6 @@ import UserForm from './pages/Users/Form';
 
 import './index.css';
 import 'react-toastify/dist/ReactToastify.css';
-
-upServer();
 
 ReactDOM.render(
   <React.StrictMode>
