@@ -6,6 +6,20 @@ import api from '../../../services/api';
 import './style.css'
 
 function UserForm() {
+    const initialValidateField = () => {
+        return {
+            isValid: false,
+            isBlur: false
+        }
+    }
+    const initialValidate = {
+        name: initialValidateField(),
+        address: initialValidateField(),
+        cpf: initialValidateField(),
+        email: initialValidateField(),
+        phone: initialValidateField(),
+        role: initialValidateField()
+    }
     const params = useParams()
     const navigate = useNavigate()
     const [user, setUser] = useState({})
@@ -15,6 +29,7 @@ function UserForm() {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [role, setRole] = useState("")
+    const [validate, setValidate] = useState(initialValidate)
 
     useEffect(() => {
         if (params?.id !== 'form') {
@@ -24,28 +39,28 @@ function UserForm() {
 
     const loadUser = async function (id) {
         try {
-            const response = await api.get(`/users/${id}`);
+            const response = await api.get(`/users/${id}`)
             const user = response.data
-            setUser(user);
-            setAddress(user.address);
-            setCpf(user.cpf);
-            setEmail(user.email);
-            setName(user.name);
-            setPhone(user?.phone);
-            setRole(user.role);
+            setUser(user)
+            setAddress(user.address)
+            setCpf(user.cpf)
+            setEmail(user.email)
+            setName(user.name)
+            setPhone(user?.phone)
+            setRole(user.role)
         } catch (error) {
             console.error(error)
         }
     }
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
+        event.preventDefault()
         const newUser = { address, cpf, name, email, phone, role }
         const id = parseInt(params?.id)
         if (!isNaN(id)) {
-            await api.put(`/users/${params?.id}`, newUser);
+            await api.put(`/users/${params?.id}`, newUser)
         } else {
-            await api.post(`/users`, newUser);
+            await api.post(`/users`, newUser)
         }
         toast.success("Salvando usuário...")
         navigate("/users")
@@ -55,19 +70,50 @@ function UserForm() {
         navigate("/users")
     }
 
+    const validateName = (target, inputName) => {
+        const objValidate = { ...validate }
+        objValidate[inputName] = {
+            isValid: target.validity.valid,
+            isBlur: true
+        }
+        setValidate(objValidate)
+    }
+    
+
     return (
         <div className="user-form-container">
             <Header title="Usuários" />
             <h2>{!!user ? "Editar usuário" : "Novo usuário"}</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="inputName">
+                <label
+                    htmlFor="inputName"
+                    className={`${validate.name.isValid ? 'is-valid' : ''} ${(validate.name.isBlur && !validate.name.isValid) ? 'is-invalid' : ''}`}
+                >
                     <span>Nome:</span>
-                    <input id="inputName" type="text" onChange={(event) => setName(event.target.value)} value={name} />
+                    <input 
+                        id="inputName"
+                        type="text"
+                        onChange={(event) => setName(event.target.value)}
+                        value={name}
+                        minLength="3"
+                        required
+                        onBlur={event => validateName(event.target, 'name')}
+                    />
                 </label>
 
-                <label htmlFor="inputEmail">
+                <label
+                    htmlFor="inputEmail"
+                    className={`${validate.email.isValid ? 'is-valid' : ''} ${(validate.email.isBlur && !validate.email.isValid) ? 'is-invalid' : ''}`}
+                >
                     <span>E-Mail:</span>
-                    <input id="inputEmail" type="text" onChange={(event) => setEmail(event.target.value)} value={email} />
+                    <input
+                        id="inputEmail"
+                        type="email"
+                        minLength={3}
+                        onChange={(event) =>setEmail(event.target.value)}
+                        onBlur={event => validateName(event.target, 'email')}
+                        value={email}
+                    />
                 </label>
 
                 <label htmlFor="inputCPF">
@@ -87,7 +133,12 @@ function UserForm() {
 
                 <label htmlFor="inputRole">
                     <span>Função:</span>
-                    <input id="inputRole" type="text" onChange={(event) => setRole(event.target.value)} value={role} />
+                    <select id="inputRole" value={role} onChange={(event) => setRole(event.target.value)}>
+                        <option>---</option>
+                        <option value="aluno">Aluno</option>
+                        <option value="recepcionista">Recepcionista</option>
+                        <option value="gerente">Gerente</option>
+                    </select>
                 </label>
 
                 <div className="actions">

@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 // import { toast } from 'react-toastify';
-import Header from '../../components/Header';
-import api from '../../services/api';
+import Header from '../../components/Header'
+import api from '../../services/api'
 import './style.css'
 
 function Users() {

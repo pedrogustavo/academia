@@ -1,29 +1,55 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Harry Tiago Potter",
-            "birthDate": "31/07/1980",
-            "cpf": "11122233344",
-            "address": "Rua dos Alfeneiros, nº4",
-            "email": "potter@hogwarts.com"
-        },
-        {
-            "id": 2,
-            "name": "Hermione Jean Granger",
-            "birthDate": "19/09/1979",
-            "cpf": "11122233344",
-            "address": "Rua dos Alfeneiros, nº5",
-            "email": "hermione@hogwarts.com"
-        },
-        {
-            "id": 3,
-            "name": "Ronald Abílio Weasley",
-            "birthDate": "01/03/1980",
-            "cpf": "11122233344",
-            "address": "Rua dos Alfeneiros, nº5",
-            "email": "weasley@hogwarts.com"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Harry Tiago Potter",
+      "birthDate": "31/07/1980",
+      "cpf": "11122233344",
+      "address": "Rua dos Alfeneiros, nº4",
+      "email": "potter@hogwarts.com"
+    },
+    {
+      "id": 2,
+      "name": "Hermione Jean Granger",
+      "birthDate": "19/09/1979",
+      "cpf": "11122233344",
+      "address": "Rua dos Alfeneiros, nº5",
+      "email": "hermione@hogwarts.com"
+    },
+    {
+      "id": 3,
+      "name": "Ronald Abílio Weasley",
+      "birthDate": "01/03/1980",
+      "cpf": "11122233344",
+      "address": "Rua dos Alfeneiros, nº5",
+      "email": "weasley@hogwarts.com"
+    },
+    {
+      "address": "Rua de teste",
+      "cpf": "12312345677",
+      "name": "Teste cadastro",
+      "email": "teste@email.com",
+      "phone": "12345678",
+      "role": "aluno",
+      "id": 4
+    },
+    {
+      "address": "Rua teste 123",
+      "cpf": "12345698777",
+      "name": "Teste cadastro",
+      "email": "teste@teste.com",
+      "phone": "21123122",
+      "role": "aluno",
+      "id": 5
+    },
+    {
+      "address": "rua de teste",
+      "cpf": "123456789",
+      "name": "Fulano de tal",
+      "email": "fulano@email.com",
+      "phone": "0909087777",
+      "role": "aluno",
+      "id": 6
+    }
+  ]
 }
-  

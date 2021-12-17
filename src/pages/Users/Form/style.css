@@ -30,7 +30,6 @@
   align-items: center;
   grid-template-columns: 1fr 2fr;
   margin-bottom: 10px;
-  height: 30px;
 }
 
 .user-form-container form label input {
@@ -38,6 +37,28 @@
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 5px;
+}
+
+.user-form-container form label.is-valid input {
+  border-color: green;
+}
+
+.user-form-container form label.is-valid::after {
+  content: "Campo válido";
+  color: green;
+  grid-column-start: 2;
+  margin-top: 5px;
+}
+
+.user-form-container form label.is-invalid::after {
+  content: "Campo inválido";
+  color: red;
+  grid-column-start: 2;
+  margin-top: 5px;
+}
+
+.user-form-container form label.is-invalid input {
+  border-color: red;
 }
 
 .user-form-container form .actions {
