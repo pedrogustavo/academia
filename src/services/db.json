@@ -50,6 +50,25 @@
       "phone": "0909087777",
       "role": "aluno",
       "id": 6
+    },
+    {
+      "address": "Rua dos bobos, Nº 0",
+      "cpf": "123123123",
+      "name": "Draco Malfoy",
+      "email": "sousonserino@hogwarts.com",
+      "phone": "12345678",
+      "role": "aluno",
+      "id": 7
+    },
+    {
+      "address": "Rua de teste, 123",
+      "cpf": "123.123.123-12",
+      "name": "Teste de cadastro",
+      "email": "teste@teste.com",
+      "phone": "121212121",
+      "role": "aluno",
+      "birthDate": "2021-12-15",
+      "id": 8
     }
   ]
 }

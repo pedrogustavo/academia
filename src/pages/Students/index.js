@@ -1,17 +1,25 @@
 import Header from '../../components/Header'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import api from '../../services/api'
 import './style.css'
+import { toast } from 'react-toastify';
 
 function Students() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [users, setUsers] = useState([])
 
     const loadUsers = async () => {
         try {
-            const response = await api.get('/users?role=aluno')
-            setUsers(response.data)
+            const userType = sessionStorage.getItem('userType')
+            if (['recepcionista', 'gerente'].includes(userType)) {
+                const response = await api.get('/users?role=aluno')
+                setUsers(response.data)
+                toast("Lista de alunos carregada com sucesso!")
+            } else {
+                toast.error("Você não tem permissão para acessar essa página")
+                setUsers([])
+            }
         } catch (error) {
             setUsers([])
         }
@@ -21,10 +29,9 @@ function Students() {
         loadUsers()
     }, [])
 
-
-    const handleEdit = (user) => {
-        navigate(`/users/${user.id}`)
-    }
+    // const handleEdit = (user) => {
+    //     navigate(`/users/${user.id}`)
+    // }
 
     return (
         <div className="users-container">
@@ -38,7 +45,7 @@ function Students() {
                                 <th>Nome</th>
                                 <th>CPF</th>
                                 <th>Email</th>
-                                <th>Ações</th>
+                                {/* <th>Ações</th> */}
                             </tr>
                         </thead>
                         <tbody>
@@ -47,10 +54,10 @@ function Students() {
                                     <td>{user.name}</td>
                                     <td>{user.cpf}</td>
                                     <td>{user.email}</td>
-                                    <td>
-                                        {/* <button className="btn-remove-user" onClick={() => handleRemove(user)}>Excluir</button> */}
+                                    {/* <td>
+                                        <button className="btn-remove-user" onClick={() => handleRemove(user)}>Excluir</button>
                                         <button className="btn-edit-user" onClick={() => handleEdit(user)}>Editar</button>
-                                    </td>
+                                    </td> */}
                                 </tr>
                             ))}
                         </tbody>

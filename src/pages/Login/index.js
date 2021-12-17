@@ -11,7 +11,9 @@ function Login() {
   const handleLogin = function (event) {
     event.preventDefault()
     if (password === '123456') {
-      navigate("/users")
+      sessionStorage.setItem('userType', username)
+      toast.success("Sucesso!")
+      navigate("/students")
     } else {
       toast("Login e senha não confere!")
     }
