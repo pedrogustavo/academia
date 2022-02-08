@@ -30,23 +30,23 @@
     width: 100%;
 }
 
-.users-container table {
+table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.8rem;
 }
 
-.users-container table thead th {
+table thead th {
   border-bottom: 1px solid var(--border);
   padding: 5px;
   margin-bottom: 5px;
   text-align: left;
 }
 
-.users-container table tbody td {
+table tbody td {
     padding: 5px;
 }
-.users-container table tbody tr:nth-child(even) {
+table tbody tr:nth-child(even) {
   background: var(--bg-card);
 }
 

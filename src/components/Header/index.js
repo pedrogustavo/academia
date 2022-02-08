@@ -14,15 +14,17 @@ function Header({ title, active }) {
                         <NavLink to="/students">Alunos</NavLink>
                     </li>
                     {
-                        userType === 'gerente' && (
+                        (userType === 'gerente' || userType === 'recepcionista') && (
+                            <>
                             <li className={active === 'users' ? 'active' : ''}>
                                 <NavLink to="/users">Usuários</NavLink>
                             </li>
+                            <li className={active === 'users' ? 'active' : ''}>
+                                <NavLink to="/payments">Mensalidades</NavLink>
+                            </li>
+                            </>
                         )
                     }
-                    <li className={active === 'users' ? 'active' : ''}>
-                        <NavLink to="/payments">Mensalidades</NavLink>
-                    </li>
                     <li>
                         <NavLink to="/">Sair</NavLink>
                     </li>

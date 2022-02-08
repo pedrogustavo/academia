@@ -9,12 +9,14 @@
       "email": "potter@hogwarts.com"
     },
     {
-      "id": 2,
-      "name": "Hermione Jean Granger",
-      "birthDate": "19/09/1979",
-      "cpf": "11122233344",
       "address": "Rua dos Alfeneiros, nº5",
-      "email": "hermione@hogwarts.com"
+      "cpf": "11122233344",
+      "name": "Hermione Jean Granger",
+      "email": "hermione@hogwarts.com",
+      "phone": "121212121",
+      "role": "aluno",
+      "birthDate": "2003-02-23",
+      "id": 2
     },
     {
       "id": 3,
@@ -40,7 +42,24 @@
       "email": "teste@teste.com",
       "phone": "21123122",
       "role": "aluno",
-      "id": 5
+      "id": 5,
+      "payment": [
+        {
+          "paymentDate": "2021-12-09",
+          "paymentType": "dinheiro",
+          "paymentValue": "4444"
+        },
+        {
+          "paymentDate": "2022-02-16",
+          "paymentType": "debito",
+          "paymentValue": "6666"
+        },
+        {
+          "paymentDate": "2022-02-24",
+          "paymentType": "credito",
+          "paymentValue": "444"
+        }
+      ]
     },
     {
       "address": "rua de teste",
@@ -49,7 +68,14 @@
       "email": "fulano@email.com",
       "phone": "0909087777",
       "role": "aluno",
-      "id": 6
+      "id": 6,
+      "payment": [
+        {
+          "paymentDate": "2021-12-09",
+          "paymentType": "dinheiro",
+          "paymentValue": "4444"
+        }
+      ]
     },
     {
       "address": "Rua dos bobos, Nº 0",
@@ -58,7 +84,19 @@
       "email": "sousonserino@hogwarts.com",
       "phone": "12345678",
       "role": "aluno",
-      "id": 7
+      "id": 7,
+      "payment": [
+        {
+          "paymentDate": "2021-10-04",
+          "paymentType": "dinheiro",
+          "paymentValue": "333"
+        },
+        {
+          "paymentDate": "2021-12-09",
+          "paymentType": "dinheiro",
+          "paymentValue": "4444"
+        }
+      ]
     },
     {
       "address": "Rua de teste, 123",
@@ -69,6 +107,16 @@
       "role": "aluno",
       "birthDate": "2021-12-15",
       "id": 8
+    },
+    {
+      "address": "Rua de teste, 345",
+      "cpf": "970.506.260-90",
+      "name": "Fulano",
+      "email": "teste@teste.com",
+      "phone": "211111111",
+      "role": "gerente",
+      "birthDate": "1990-11-16",
+      "id": 9
     }
   ]
 }
