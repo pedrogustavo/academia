@@ -6,7 +6,8 @@
       "birthDate": "31/07/1980",
       "cpf": "11122233344",
       "address": "Rua dos Alfeneiros, nº4",
-      "email": "potter@hogwarts.com"
+      "email": "potter@hogwarts.com",
+      "role": "aluno"
     },
     {
       "address": "Rua dos Alfeneiros, nº5",
@@ -24,7 +25,8 @@
       "birthDate": "01/03/1980",
       "cpf": "11122233344",
       "address": "Rua dos Alfeneiros, nº5",
-      "email": "weasley@hogwarts.com"
+      "email": "weasley@hogwarts.com",
+      "role": "aluno"
     },
     {
       "address": "Rua de teste",
@@ -79,24 +81,13 @@
     },
     {
       "address": "Rua dos bobos, Nº 0",
-      "cpf": "123123123",
+      "cpf": "123.123.123-12",
       "name": "Draco Malfoy",
       "email": "sousonserino@hogwarts.com",
       "phone": "12345678",
       "role": "aluno",
-      "id": 7,
-      "payment": [
-        {
-          "paymentDate": "2021-10-04",
-          "paymentType": "dinheiro",
-          "paymentValue": "333"
-        },
-        {
-          "paymentDate": "2021-12-09",
-          "paymentType": "dinheiro",
-          "paymentValue": "4444"
-        }
-      ]
+      "birthDate": "1994-02-16",
+      "id": 7
     },
     {
       "address": "Rua de teste, 123",

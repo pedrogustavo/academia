@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 // import { toast } from 'react-toastify';
 import Header from '../../components/Header'
 import api from '../../services/api'
 import './style.css'
 
 function Users() {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [users, setUsers] = useState([])
+    const userType = sessionStorage.getItem('userType')
 
     const loadUsers = async () => {
         try {
@@ -29,9 +30,9 @@ function Users() {
     //     loadUsers();
     // }
 
-    // const handleEdit = (user) => {
-    //     navigate(`/users/${user.id}`)
-    // }
+    const handleEdit = (user) => {
+        navigate(`/users/${user.id}`)
+    }
 
     return (
         <div className="users-container">
@@ -45,7 +46,8 @@ function Users() {
                                 <th>Nome</th>
                                 <th>CPF</th>
                                 <th>Email</th>
-                                {/* <th>Ações</th> */}
+                                <th>Tipo de usuário</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,10 +56,11 @@ function Users() {
                                     <td>{user.name}</td>
                                     <td>{user.cpf}</td>
                                     <td>{user.email}</td>
-                                    {/* <td>
-                                        <button className="btn-remove-user" onClick={() => handleRemove(user)}>Excluir</button>
-                                        <button className="btn-edit-user" onClick={() => handleEdit(user)}>Editar</button>
-                                    </td> */}
+                                    <td>{user.role}</td>
+                                    <td>
+                                        {/* <button className="btn-remove-user" onClick={() => handleRemove(user)}>Excluir</button> */}
+                                        {(userType === 'recepcionista' && user.role !== 'gerente') && <button className="btn-edit-user" onClick={() => handleEdit(user)}>Editar</button>}
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
