@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Users from './pages/Users';
 import Students from './pages/Students';
 import Payments from './pages/Payments';
+import Employees from './pages/Employees';
 import UserForm from './pages/Users/Form';
 
 import './index.css';
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Route path="users/:id" element={<UserForm />} />
         <Route path="students" element={<Students />} />
         <Route path="payments" element={<Payments />} />
+        <Route path="employees" element={<Employees />} />
       </Routes>
     </BrowserRouter>
     <ToastContainer />

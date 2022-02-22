@@ -1,13 +1,14 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Harry Tiago Potter",
-      "birthDate": "31/07/1980",
-      "cpf": "11122233344",
       "address": "Rua dos Alfeneiros, nº4",
+      "cpf": "111.222.222-22",
+      "name": "Harry Tiago Potter",
       "email": "potter@hogwarts.com",
-      "role": "aluno"
+      "phone": "212222111",
+      "role": "aluno",
+      "birthDate": "2022-02-23",
+      "id": 1
     },
     {
       "address": "Rua dos Alfeneiros, nº5",
@@ -38,48 +39,6 @@
       "id": 4
     },
     {
-      "address": "Rua teste 123",
-      "cpf": "12345698777",
-      "name": "Teste cadastro",
-      "email": "teste@teste.com",
-      "phone": "21123122",
-      "role": "aluno",
-      "id": 5,
-      "payment": [
-        {
-          "paymentDate": "2021-12-09",
-          "paymentType": "dinheiro",
-          "paymentValue": "4444"
-        },
-        {
-          "paymentDate": "2022-02-16",
-          "paymentType": "debito",
-          "paymentValue": "6666"
-        },
-        {
-          "paymentDate": "2022-02-24",
-          "paymentType": "credito",
-          "paymentValue": "444"
-        }
-      ]
-    },
-    {
-      "address": "rua de teste",
-      "cpf": "123456789",
-      "name": "Fulano de tal",
-      "email": "fulano@email.com",
-      "phone": "0909087777",
-      "role": "aluno",
-      "id": 6,
-      "payment": [
-        {
-          "paymentDate": "2021-12-09",
-          "paymentType": "dinheiro",
-          "paymentValue": "4444"
-        }
-      ]
-    },
-    {
       "address": "Rua dos bobos, Nº 0",
       "cpf": "123.123.123-12",
       "name": "Draco Malfoy",
@@ -108,6 +67,46 @@
       "role": "gerente",
       "birthDate": "1990-11-16",
       "id": 9
+    },
+    {
+      "address": "Av Brasil 123",
+      "cpf": "970.506.260-90",
+      "name": "Teste funcionário",
+      "email": "teste@teste.com",
+      "phone": "123123123",
+      "role": "funcionario",
+      "birthDate": "1977-02-22",
+      "id": 10
+    }
+  ],
+  "login": [
+    {
+      "cpf": "970.506.260-90",
+      "name": "aluno",
+      "userType": "aluno",
+      "email": "aluno@teste.com",
+      "password": "123456"
+    },
+    {
+      "cpf": "970.506.260-90",
+      "name": "fulano",
+      "userType": "gerente",
+      "email": "teste@teste.com",
+      "password": "123456"
+    },
+    {
+      "cpf": "970.506.260-90",
+      "name": "gerente",
+      "userType": "gerente",
+      "email": "gerente@teste.com",
+      "password": "123456"
+    },
+    {
+      "cpf": "970.506.260-90",
+      "name": "recepcionista",
+      "userType": "recepcionista",
+      "email": "recepcionista@teste.com",
+      "password": "123456"
     }
   ]
 }

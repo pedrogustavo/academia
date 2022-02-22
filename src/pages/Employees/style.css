@@ -1,0 +1,10 @@
+.users-container-grid {
+    width: 100%;
+    display: block;
+}
+
+.student-title-form {
+    font-size: 1.2em;
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+}

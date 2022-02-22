@@ -25,10 +25,14 @@ function Header({ title, active }) {
                             </>
                         )
                     }
+                    {userType === 'gerente' && <li className={active === 'employees' ? 'active' : ''}>
+                        <NavLink to="/employees">Funcionários</NavLink>
+                    </li>}
                     <li>
                         <NavLink to="/">Sair</NavLink>
                     </li>
                 </ul>
+                <small>Logado como: {userType}</small>
             </nav>
         </header>
     )

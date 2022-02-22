@@ -192,6 +192,7 @@ function UserForm() {
                         <option value="aluno">Aluno</option>
                         <option value="recepcionista">Recepcionista</option>
                         <option value="gerente">Gerente</option>
+                        <option value="funcionario">funcionário</option>
                     </select>
                 </label>
 

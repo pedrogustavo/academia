@@ -53,7 +53,7 @@ function Payments() {
     const handleSubmitValidateUser = async (event) => {
         event.preventDefault()
         try {
-            const response = await api.get('/users')
+            const response = await api.get('/login')
             const users = response.data.filter(user => (
                 user.name.toLowerCase() === name.toLowerCase() && user.cpf === cpf
             ))

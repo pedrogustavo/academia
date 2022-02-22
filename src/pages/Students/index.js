@@ -8,21 +8,25 @@ import { toast } from 'react-toastify';
 function Students() {
     // const navigate = useNavigate()
     const [users, setUsers] = useState([])
+    const userType = sessionStorage.getItem('userType')
 
     const loadUsers = async () => {
         try {
-            const userType = sessionStorage.getItem('userType')
-            if (['recepcionista', 'gerente'].includes(userType)) {
-                const response = await api.get('/users?role=aluno')
-                setUsers(response.data)
-                toast("Lista de alunos carregada com sucesso!")
+            const response = await api.get('/users?role=aluno')
+            setUsers(response.data)
+            if (userType === 'aluno') {
+                toast.error('Você não possui acesso a alguns dados')
             } else {
-                toast.error("Você não tem permissão para acessar essa página")
-                setUsers([])
+                toast("Lista de alunos carregada com sucesso!")
             }
         } catch (error) {
             setUsers([])
         }
+    }
+
+    const canSeeField = () => {
+        if (userType === 'aluno') return false
+        return true
     }
 
     useEffect(() => {
@@ -43,8 +47,8 @@ function Students() {
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>CPF</th>
-                                <th>Email</th>
+                                {canSeeField() && <th>CPF</th>}
+                                {canSeeField() && <th>Email</th>}
                                 {/* <th>Ações</th> */}
                             </tr>
                         </thead>
@@ -52,8 +56,8 @@ function Students() {
                             {users?.map(user => (
                                 <tr key={user.id}>
                                     <td>{user.name}</td>
-                                    <td>{user.cpf}</td>
-                                    <td>{user.email}</td>
+                                    {canSeeField() && <td>{user.cpf}</td>}
+                                    {canSeeField() && <td>{user.email}</td>}
                                     {/* <td>
                                         <button className="btn-remove-user" onClick={() => handleRemove(user)}>Excluir</button>
                                         <button className="btn-edit-user" onClick={() => handleEdit(user)}>Editar</button>

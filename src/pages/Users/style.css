@@ -67,3 +67,14 @@ table tbody tr:nth-child(even) {
     border-radius: 4px;
     margin: 5px;
 }
+
+.filtro {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filtro select,
+.filtro input {
+  margin-right: 10px;
+}

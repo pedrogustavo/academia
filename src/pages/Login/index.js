@@ -1,21 +1,29 @@
 import './style.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import api from '../../services/api'
+
 
 function Login() {
   const navigate = useNavigate()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  const handleLogin = function (event) {
+  const handleLogin = async (event) => {
     event.preventDefault()
-    if (password === '123456') {
-      sessionStorage.setItem('userType', username)
-      toast.success("Sucesso!")
-      navigate("/students")
-    } else {
-      toast("Login e senha não confere!")
+    try {
+        const response = await api.get('/login')
+        const loginUsers = response.data.filter(user => user.name === username && user.password === password)
+        if (loginUsers.length) {
+          sessionStorage.setItem('userType', loginUsers[0].userType)
+          toast.success("Sucesso!")
+          navigate("/students")
+        } else {
+          toast("Login e senha não confere!")
+        }
+    } catch (error) {
+      console.log(error)
     }
   }
 
